@@ -1,17 +1,17 @@
 +++
-title = "Project structure"
+title = "プロジェクトの構造"
 weight = 300
 +++
 
 ## Open your IDE
 
-Now's a good time to open the project in your favorite IDE and explore.
+お気に入りのIDEでプロジェクトを開き、ディレクトリの中身を見てみましょう。
 
-> If you use VSCode, you can just type `code .` within the project directory.
+> VSCodeを使用する場合は、プロジェクトディレクトリ内で `code .` と入力するだけです。
 
-## Explore your project directory
+## プロジェクトディレクトリを探索する
 
-You'll see something like this:
+次のような内容が表示されます。
 
 ![](./structure.png)
 

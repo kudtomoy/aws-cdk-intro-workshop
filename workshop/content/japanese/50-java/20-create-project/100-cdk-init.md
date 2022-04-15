@@ -3,25 +3,23 @@ title = "cdk init"
 weight = 100
 +++
 
-## Create project directory
+## プロジェクトディレクトリの作成
 
-Create an empty directory on your system:
+空のディレクトリを作成し、カレントディレクトリを変更します。
 
 ```
-mkdir cdk-workshop && cd cdk-workshop
+mkdir cdk_workshop && cd cdk_workshop
 ```
 
 ## cdk init
 
-We will use `cdk init` to create a new Java CDK project:
+新しい Java CDK プロジェクトを作成するために `cdk init` を使います。
 
 ```
 cdk init sample-app --language java
 ```
 
-Output should look like this (you can safely ignore warnings about
-initialization of a git repository, this probably means you don't have git
-installed, which is fine for this workshop):
+次のように出力されます（Gitがインストールされていない場合、Gitリポジトリの初期化に関する警告が表示されますが、無視しても問題ありません。）
 
 ```
 Applying project template sample-app for java
