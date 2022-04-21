@@ -67,7 +67,7 @@ class WorkshopPipelineStack(Stack):
 
 This imports and creates an instance of the `WorkshopPipelineStage`. Later, you might instantiate this stage multiple times (e.g. you want a Production deployment and a separate devlopment/test deployment).
 
-Then we add that stage to our pipeline (`pipeline.add_stage(deploy);`). A `Stage` in a CDK pipeline represents a set of one or more CDK Stacks that should be deployed together, to a particular environment.
+Then we add that stage to our pipeline (`pipeline.add_stage(deploy)`). A `Stage` in a CDK pipeline represents a set of one or more CDK Stacks that should be deployed together, to a particular environment.
 
 ## Commit/Deploy
 Now that we have added the code to deploy our application, all that's left is to commit and push those changes to the repo.

@@ -17,7 +17,7 @@ you how to find your logs through the AWS console.
    are connected to the correct region).
 
 2. Click on the __HitCounter__ Lambda function
-   (the name should contain the string HelloHitCounterHitCountHandler`):
+   (the name should contain the string `HelloHitCounterHitCountHandler`):
     ![](./logs1.png)
 
 3. Click on __Monitoring__

@@ -1,6 +1,6 @@
 +++
 title = "Hit counter handler"
-weight = 100
+weight = 200
 +++
 
 ## Hit counter Lambda handler
