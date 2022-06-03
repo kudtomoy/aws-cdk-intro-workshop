@@ -29,13 +29,13 @@ exports.handler = async function(event) {
 このLambda関数はJavaScriptで実装されています。その他の言語での実装については[AWS Lambdaのドキュメント](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) を参照してください。
 {{% /notice %}}
 
-また、もし __git__ を使用する場合は、`.gitignore`ファイルに`！lambda/*。js`を追加することを検討してください。
+また、もし __git__ を使用する場合は、`.gitignore`ファイルに`！lambda/*.js`を追加することを検討してください。
 
 ## AWS Lambdaコンストラクトライブラリをインストールする
 
 AWS CDKには、__AWS Construct Library__ と呼ばれるコンストラクトのための広範なライブラリが付属しています。AWS Construct Libraryは、AWSのサービスごとに独立した __モジュール__ として提供されます。たとえば、AWS Lambda関数を定義する場合、AWS Lambda の Construct Library を使用する必要があります。
 
-AWSコンストラクト学ぶためには、 [AWS Construct Library reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)  を参照してください。
+AWSコンストラクト学ぶには、 [AWS Construct Library reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)  を参照してください。
 
 
 ![](./clib.png)
@@ -78,13 +78,13 @@ export class CdkWorkshopStack extends cdk.Stack {
 
 ## コンストラクト(constructs) と コンストラクター(constructors) について
 
-ご覧のとおり、両方のクラス コンストラクター `CdkWorkshopStack`、 `lambda.Function` (およびCDKの他の多くのクラス) には、シグネチャ `(scope, id, props)` が含まれています。 これらのすべては __コンストラクト__ であるため、 CDKアプリケーションの基本的な構成要素となっています。 それらは、スコープを介してより高いレベルの抽象化にまとめることができる抽象的な「クラウドコンポーネント」を表します。 スコープにはコンストラクトを含めることができ、そのコンストラクトには他のコンストラクトなどを含めることができます。
+ご覧のとおり、両方のクラスコンストラクター `CdkWorkshopStack`、 `lambda.Function` (およびCDKの他の多くのクラス) には、シグネチャ `(scope, id, props)` が含まれています。 これらのすべては __コンストラクト__ であるため、 CDKアプリケーションの基本的な構成要素となっています。 それらは、スコープを介してより高いレベルの抽象化にまとめることができる抽象的な「クラウドコンポーネント」を表します。 スコープにはコンストラクトを含めることができ、そのコンストラクトには他のコンストラクトなどを含めることができます。
 
 
 コンストラクトは常に別のコンストラクトのスコープ内で作成され、作成されたスコープ内で一意でなければならない識別子を常に持っている必要があります。したがって、コンストラクト初期化子（コンストラクター）には常に次のシグネチャが必要です。
 
 1. __`scope`__: 最初の引数には、この構成が作成されるスコープを必ず指定します。ほとんどすべての場合、__現在の__ コンストラクトスコープ内でコンストラクトを定義することになります。つまり、通常 `this` は最初の引数に渡すだけです 。
-2. __`id`__: 2番目の引数は、構造の __ローカルID__ です。これは、同じスコープ内のコンストラクト間で一意である必要があるIDです。CDKはこのIDを使用して、 このスコープ内で定義された各リソースのCloudFormation [論理ID](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html) を計算します。CDKのIDの詳細については、[CDKユーザーマニュアル](https://docs.aws.amazon.com/cdk/latest/guide/identifiers.html#identifiers_logical_ids) を参照してください。
+2. __`id`__: 2番目の引数は、コンストラクトの __ローカルID__ です。これは、同じスコープ内のコンストラクト間で一意である必要があるIDです。CDKはこのIDを使用して、 このスコープ内で定義された各リソースのCloudFormation の[論理ID](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html) を計算します。CDKのIDの詳細については、[CDKユーザーマニュアル](https://docs.aws.amazon.com/cdk/latest/guide/identifiers.html#identifiers_logical_ids) を参照してください。
 3. __`props`__: 最後の（場合によってはオプションの）引数は、初期化プロパティのセットです。これらは各コンストラクトに固有です。たとえば、 `lambda.Function` コンストラクトは `runtime`、`code`、 `handler` のようなプロパティを受け入れます。 IDEのオートコンプリートまたは[オンラインドキュメント](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html) を使用して、さまざまなオプションを調べられます。
 
 ## 差分
