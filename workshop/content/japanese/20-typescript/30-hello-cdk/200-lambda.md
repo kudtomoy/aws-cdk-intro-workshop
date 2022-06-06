@@ -35,7 +35,7 @@ exports.handler = async function(event) {
 
 AWS CDKには、__AWS Construct Library__ と呼ばれるコンストラクトのための広範なライブラリが付属しています。AWS Construct Libraryは、AWSのサービスごとに独立した __モジュール__ として提供されます。たとえば、AWS Lambda関数を定義する場合、AWS Lambda の Construct Library を使用する必要があります。
 
-AWSコンストラクト学ぶには、 [AWS Construct Library reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)  を参照してください。
+AWSコンストラクトを学ぶには、 [AWS Construct Library reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)  を参照してください。
 
 
 ![](./clib.png)
