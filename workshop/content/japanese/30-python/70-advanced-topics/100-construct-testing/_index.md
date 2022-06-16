@@ -36,4 +36,4 @@ template.has_resource_properties("AWS::CertificateManager::Certificate", {
 
 `Match.absent()` はオブジェクトの特定のキーが設定*されていない* (或いは `undefined` に設定れている) ことのアサートに使えます。
 
-詳しい説明には、[こちら](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.assertions/README.html)のドキュメントをおご参照ください。
+詳しい説明には、[こちら](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.assertions/README.html)のドキュメントを参照ください。

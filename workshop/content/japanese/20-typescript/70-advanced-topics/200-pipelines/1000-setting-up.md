@@ -3,7 +3,7 @@ title = "パイプライン入門"
 weight = 110
 +++
 
-> 注意 : このワークショップの章は、前の全ての章を完了していることを前提としています。完了していないか、またはこの部分のみ検証する場合は、[こちら](https://github.com/aws-samples/aws-cdk-intro-workshop/tree/master/code/typescript/main-workshop) のコードを利用すれば、テストを追加した直後のプロジェクトの状態に設定することができます。
+> 注意 : このワークショップの章は、前の全ての章を完了していることを前提としています。完了していないか、またはこの部分のみ検証する場合は、[こちら](https://github.com/aws-samples/aws-cdk-intro-workshop/tree/master/code/typescript/tests-workshop) のコードを利用すれば、テストを追加した直後のプロジェクトの状態に設定することができます。
 
 ## パイプラインのスタックの作成
 最初のステップでは、パイプラインを持つスタックを作成します。
