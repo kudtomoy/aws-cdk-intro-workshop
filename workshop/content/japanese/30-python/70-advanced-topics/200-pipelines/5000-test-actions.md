@@ -81,7 +81,7 @@ class CdkWorkshopStack(Stack):
 * `Deploy-WebService`: こちらはアプリケーションです。このスタックの名前にクリックし、`出力` タブを選択します。4つのエンドポイント (重複した値 2組) が表示されます。そのうちの 2つ、`EndpointXXXXXX` と `ViewerHitCounterViewerEndpointXXXXXXX` は Cloudformation によってデフォルトで生成されていて、残りの 2つは明示的に宣言した出力になります。
 
 
-![](./stack-outputs.png)
+![](/stack-outputs.png)
 
 出力 `TableViewerUrl` の値をクリックすると、最初のワークショップで作成した hitcounter テーブルが表示されます。
 
