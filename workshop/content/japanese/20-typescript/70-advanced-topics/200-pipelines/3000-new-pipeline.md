@@ -46,7 +46,7 @@ export class WorkshopPipelineStack extends cdk.Stack {
 }
 {{</highlight>}}
 
-### コンポーネットの説明
+### コンポーネントの説明
 上記ソースコードは以下の通りに構成されています。
 
 * `new CodePipeline(...)`: 必要な値でパイプラインを初期化します。今後のベースコンポーネントになります。すべてのパイプラインには以下のような構成が必要です。

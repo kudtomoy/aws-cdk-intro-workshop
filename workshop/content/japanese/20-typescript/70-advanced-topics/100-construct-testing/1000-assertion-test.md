@@ -134,7 +134,7 @@ test('Lambda Has Environment Variables', () => {
 $ npm run test
 ```
 
-今回のテストは失敗するが、期待値の出力から環境変数の正しい値を入手できるはずです。
+今回のテストは失敗しますが、期待値の出力から環境変数の正しい値を入手できるはずです。
 
 
 {{<highlight bash "hl_lines=20-21 24-25">}}
