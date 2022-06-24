@@ -52,8 +52,8 @@ Executing 'mvn package'
 ✅ All done!
 ```
 
-As you can see, it shows us a bunch of useful commands to get us started.
+ご覧のとおり、作業を開始するのに役立つコマンドがたくさん表示されています。
 
-## See Also
+## 参考情報
 
 - [AWS CDK Command Line Toolkit (cdk) in the AWS CDK User Guide](https://docs.aws.amazon.com/CDK/latest/userguide/tools.html)
