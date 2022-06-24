@@ -1,9 +1,9 @@
 +++
-title = ".NET Workshop"
+title = ".NET ワークショップ"
 chapter = true
 weight = 40
 +++
 
-# The .NET Workshop
+# .NET ワークショップ
 
-This version of the workshop will guide you through a "getting started" experience in C# using the .NET Core library.
+本バージョンでは、.NET Core ライブラリを使用した C# による入門編をご案内します。
