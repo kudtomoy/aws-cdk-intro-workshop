@@ -36,13 +36,13 @@ class WorkshopPipelineStack(Stack):
                 commands=[
                     "npm install -g aws-cdk",  # Installs the cdk cli on Codebuild
                     "pip install -r requirements.txt",  # Instructs Codebuild to install required packages
-                    "npx cdk synth",
+                    "cdk synth",
                 ]
             ),
         )
 {{</highlight>}}
 
-### コンポーネットの説明
+### コンポーネントの説明
 上記ソースコードは以下の通りに構成されています。
 
 * `pipelines.CodePipeline(...)` : 必要な値でパイプラインを初期化します。今後のベースコンポーネントになります。すべてのパイプラインには以下のような構成が必要です。
@@ -54,7 +54,7 @@ class WorkshopPipelineStack(Stack):
 
 ```
 git commit -am "MESSAGE" && git push
-npx cdk deploy
+cdk deploy
 ```
 
 CDK パイプラインはソースリポジトリのコミットごとに自動的に更新するので、このコマンドを実行するのはこれで *最後* です！
