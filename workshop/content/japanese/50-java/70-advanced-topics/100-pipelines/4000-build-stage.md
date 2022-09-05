@@ -83,6 +83,7 @@ public class WorkshopPipelineStack extends Stack {
 }
 {{</highlight>}}
 
+
 これにより、 `WorkshopPipelineStage` のインスタンスがインポートされ、作成されます。場合によって、このステージの複数のインスタンスを作成することがあります (たとえば、本番環境と開発/テスト環境のデプロイを分ける場合など)。
 
 次に、このステージをパイプラインに追加します (`pipeline.addStage(deploy);`)。 CodePipeline の `ApplicationStage` は、すべての CDK デプロイメントアクションを表します。

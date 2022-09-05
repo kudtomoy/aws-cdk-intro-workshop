@@ -5,7 +5,7 @@ weight = 100
 
 ## コンストラクトのテスト (オプション)
 
-[CDK デベロッパーガイド](https://docs.aws.amazon.com/ja_jp/cdk/v2/guide/testing.html) には、コンストラクトのテストについてのガイドがあります。
+[CDK デベロッパーガイド](https://docs.aws.amazon.com/cdk/latest/guide/testing.html) には、コンストラクトのテストについてのガイドがあります。
 このワークショップのセクションでは [きめ細かな(fine-grained) アサーション](https://docs.aws.amazon.com/cdk/latest/guide/testing.html#testing_fine_grained) と [検証(validation)](https://docs.aws.amazon.com/cdk/latest/guide/testing.html#testing_validation) の種類のテストを利用します。
 
 ### 前提条件
@@ -34,6 +34,6 @@ template.has_resource_properties("AWS::CertificateManager::Certificate", {
 })
 ```
 
-`Match.absent()` はオブジェクトの特定のキーが設定*されていない* (或いは `undefined` に設定れている) ことのアサートに使えます。
+`Match.absent()` はオブジェクトの特定のキーが設定*されていない* (或いは `undefined` に設定されている) ことのアサートに使えます。
 
-詳しい説明には、[こちら](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.assertions/README.html)のドキュメントをおご参照ください。
+詳しい説明は、[こちら](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.assertions/README.html)のドキュメントを参照してください。

@@ -5,7 +5,7 @@ weight = 300
 
 ## 高速な開発
 
-{{% notice info %}} このセクションは必須ではありませんが、`cdk deploy —-hotswap` と `cdk watch` がデプロイをどのようにスピードアップできるか確認することをお勧めします。
+{{% notice info %}} このセクションは必須ではありませんが、`cdk deploy --hotswap` と `cdk watch` がデプロイをどのようにスピードアップできるか確認することをお勧めします。
 {{% /notice %}}
 
 Lambda 関数が機能しているのは素晴らしいことですが、`"Hello, CDK"` の代わりに `"Good Morning, CDK!"` で応答させるよう Lambda 関数のコードを微調整してみましょう。
@@ -32,7 +32,7 @@ def handler(event, context):
     }
 {{</highlight>}}
 
-これで `cdk deploy` を実行することができます
+これで `cdk deploy` を実行することができます。
 
 ```
 cdk deploy
@@ -40,7 +40,7 @@ cdk deploy
 
 出力は次のようになります。
 
-```
+```text
 ✨  Synthesis time: 6s
 
 CdkWorkshopStack: deploying...
@@ -65,9 +65,9 @@ arn:aws:cloudformation:REGION:ACCOUNT-ID:stack/CdkWorkshopStack/STACK-ID
 {{% notice info %}} このコマンドは、デプロイを高速化するために CloudFormation スタックにドリフトを意図的に発生させます。このため、開発目的でのみ使用してください。実稼働環境ではホットスワップを使用しないでください！
 {{% /notice %}}
 
-デプロイ時間を短縮するために利用する `cdk deploy —-hotswap` では、CloudFormation デプロイの代わりにホットスワップデプロイを実行できるかどうかを評価します。可能であれば、CDK CLI は AWS サービス API を使用して直接変更を行います。それ以外の場合は、CloudFormation の完全なデプロイの実行にフォールバックします。
+デプロイ時間を短縮するために利用する `cdk deploy --hotswap` では、CloudFormation デプロイの代わりにホットスワップデプロイを実行できるかどうかを評価します。可能であれば、CDK CLI は AWS サービス API を使用して直接変更を行います。それ以外の場合は、CloudFormation の完全なデプロイの実行にフォールバックします。
 
-ここでは、`cdk deploy —-hotswap` を使用して、ホットスワップ可能な変更を AWS Lambda アセットコードにデプロイします。
+ここでは、`cdk deploy --hotswap` を使用して、ホットスワップ可能な変更を AWS Lambda アセットコードにデプロイします。
 
 ## `cdk deploy --hotswap`の時間
 
@@ -95,7 +95,7 @@ cdk deploy --hotswap
 
 出力は次のようになります。
 
-```
+```text
 ✨  Synthesis time: 6.44s
 
 ⚠️ The --hotswap flag deliberately introduces CloudFormation drift to speed up deployments
@@ -119,7 +119,7 @@ arn:aws:cloudformation:REGION:ACCOUNT-ID:stack/CdkWorkshopStack/STACK-ID
 CloudFormation のデプロイが完了するには 67秒かかったのに対し、ホットスワップされた変更をデプロイするのにかかったのは 3秒です。
 警告メッセージをよく見てください。非常に重要です！（開発目的でのみ使用してください。実稼働環境ではホットスワップを使用しないでください！）
 
-```
+```text
 ⚠️ The --hotswap flag deliberately introduces CloudFormation drift to speed up deployments
 ⚠️ It should only be used for development - never use it for your production Stacks!
 ```
@@ -142,13 +142,13 @@ CloudFormation のデプロイが完了するには 67秒かかったのに対�
 
 ## CDK Watch
 
-`cdk watch` は 毎回 `cdk deploy` または `cdk deploy -—hotswap` を呼び出すよりも便利です。。`cdk deploy` に似ていますが、ワンショット操作ではなく、コードとアセットに変更がないか監視し、変更が検出されると自動的にデプロイを試みます。デフォルトでは、`cdk watch` は `—-hotswap` フラグを使います。変更内容を調べて、ホットスワップできるかどうかを判断します。`cdk watch —-no-hotswap` を呼び出すと、ホットスワップ動作が無効になります。
+`cdk watch` は 毎回 `cdk deploy` または `cdk deploy --hotswap` を呼び出すよりも便利です。。`cdk deploy` に似ていますが、ワンショット操作ではなく、コードとアセットに変更がないか監視し、変更が検出されると自動的にデプロイを試みます。デフォルトでは、`cdk watch` は `--hotswap` フラグを使います。変更内容を調べて、ホットスワップできるかどうかを判断します。`cdk watch --no-hotswap` を呼び出すと、ホットスワップ動作が無効になります。
 
 一度設定したら、`cdk watch`を使用して、ホットスワップ可能な変更と、完全な CloudFormation デプロイを必要とする変更の両方を検出できます。
 
 ## `cdk.json` ファイルを見てみましょう
 
-`cdk watch` コマンドが実行されると、監視対象のファイルが `cdk.json` ファイルの `"watch"` 設定によって決定されます。`"include"` と `"exclude"` の 2 つのサブキーがあり、それぞれが単一の文字列または文字列の配列のいずれかになります。
+`cdk watch` コマンドが実行されると、監視対象のファイルが `cdk.json` ファイルの `"watch"` 設定によって決定されます。`"include"` と `"exclude"` の 2つのサブキーがあり、それぞれが単一の文字列または文字列の配列のいずれかになります。
 各エントリは、`cdk.json` ファイルの場所からの相対パスとして解釈されます。なお、`*` と `**` の両方が使えます。
 
 `cdk.json` ファイルは次のようになります。
@@ -189,7 +189,7 @@ cdk watch
 ```
 
 これにより、初期デプロイが実行され、すぐに `cdk.json` で指定したファイルの監視が開始されます。
-`lambda/hello.py` のラムダアセットコードをもう一度変更してみましょう:
+`lambda/hello.py` の Lambda アセットコードをもう一度変更してみましょう。
 
 {{<highlight python "hl_lines=10">}}
 import json
@@ -209,7 +209,7 @@ Lambda 関数のコードファイルを変更すると、`cdk watch` は変更�
 
 どれくらいの時間がかかりましたか？
 
-```
+```text
 Detected change to 'lambda/hello.py' (type: change). Triggering 'cdk deploy'
 
 ✨  Synthesis time: 5.57s
@@ -232,7 +232,7 @@ arn:aws:cloudformation:REGION:ACCOUNT-ID:stack/CdkWorkshopStack/STACK-ID
 ✨  Total time: 8.11s
 ```
 
-## Wrap Up
+## まとめ
 
 このチュートリアルの残りの部分では、引き続き `cdk watch` の代わりに `cdk deploy` を使用します。
 しかし、もし望むなら、単に `cdk watch` をオンにしておくことができます。完全なデプロイを行う必要がある場合、`cdk watch` は `cdk deploy` を呼び出します。

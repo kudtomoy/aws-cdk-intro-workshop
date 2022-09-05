@@ -1,25 +1,31 @@
 +++
-title = "Clean up"
+title = "クリーンアップ"
 weight = 60
 chapter = true
 +++
 
-# Clean up your stack
+# スタックのクリーンアップ
+AWS アカウントへの予期しない請求を防ぐために、必ず CDK スタックを削除してください。
 
-To avoid unexpected charges to your account, make sure you clean up your CDK
-stack.
+AWS CloudFormation コンソールで削除するか、`cdk destroy` を実行してください。
 
-You can either delete the stack through the AWS CloudFormation console or use
-`cdk destroy`:
+スタックを破棄するとき、リソースはその削除ポリシーに従って削除、保持、スナップショットされます。
+デフォルトでは、ほとんどのリソースはスタック削除時に削除されますが、すべてのリソースがそうなるわけではありません。
+DynamoDBのテーブルは、デフォルトで保持されます。もし、このテーブルを保持したくない場合は、`RemovalPolicy` を使って設定することができます。
 
 ```
 cdk destroy
 ```
 
-You'll be asked:
+次のように確認されたら、
 
-```
+```text
 Are you sure you want to delete: CdkWorkshopStack (y/n)?
 ```
 
-Hit "y" and you'll see your stack being destroyed.
+"y" を入力すれば、スタックが削除されていくことを確認できます。
+
+`cdk bootstrap` で作成されたブートストラップスタックはまだ存在しています。もし、将来CDKを使う予定があるなら（使用することを願っています！）、このスタックを削除しないでください。
+このスタックを削除したい場合は、CloudFormationの コンソールから削除する必要があります。
+CloudFormationコンソールを開き、`CDKToolkit`スタックを削除してください。
+作成されたS3バケットはデフォルトで保持されますので、予期せぬ請求を回避したい場合は S3コンソールを開き、ブートストラップで生成されたバケットを空にして削除してください。
